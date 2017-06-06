@@ -85,11 +85,13 @@
     </ApplicationDefinition>
     <Compile Include="Data\NsiClassDataItem.cs" />
     <Compile Include="Design\DesignDataService.cs" />
+    <Compile Include="Design\DesignNsiClassesDataServiсe.cs" />
     <Compile Include="Model\DataItem.cs" />
     <Compile Include="Model\DataService.cs" />
     <Compile Include="Model\IDataService.cs" />
     <Compile Include="Model\INsiClassesDataServiсe.cs" />
     <Compile Include="Model\NsiClass.cs" />
+    <Compile Include="Model\NsiClassesDataServiсe.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">

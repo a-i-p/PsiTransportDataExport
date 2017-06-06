@@ -36,6 +36,14 @@ namespace PsiTransportDataExport.ViewModel
                 SimpleIoc.Default.Register<IDataService, DataService>();
             }
 
+            if (ViewModelBase.IsInDesignModeStatic)
+            {
+                SimpleIoc.Default.Register<INsiClassesDataServiсe, Design.DesignNsiClassesDataServiсe>();
+            }
+            else
+            {
+                SimpleIoc.Default.Register<INsiClassesDataServiсe, NsiClassesDataServiсe>();
+            }
             SimpleIoc.Default.Register<MainViewModel>();
         }
 
