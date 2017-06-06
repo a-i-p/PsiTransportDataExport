@@ -42,7 +42,8 @@ namespace PsiTransportDataExport.ViewModel
             }
             else
             {
-                SimpleIoc.Default.Register<INsiClassesDataServiсe, NsiClassesDataServiсe>();
+                //SimpleIoc.Default.Register<INsiClassesDataServiсe, NsiClassesDataServiсe>();
+                SimpleIoc.Default.Register<INsiClassesDataServiсe, Design.DesignNsiClassesDataServiсe>();
             }
             SimpleIoc.Default.Register<MainViewModel>();
         }
