@@ -1,5 +1,5 @@
-﻿using System;
-using PsiTransportDataExport.Model;
+﻿using PsiTransportDataExport.Model;
+using System;
 
 namespace PsiTransportDataExport.Design
 {

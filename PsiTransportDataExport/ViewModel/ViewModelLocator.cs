@@ -4,7 +4,7 @@
       <vm:ViewModelLocatorTemplate xmlns:vm="clr-namespace:PsiTransportDataExport.ViewModel"
                                    x:Key="Locator" />
   </Application.Resources>
-  
+
   In the View:
   DataContext="{Binding Source={StaticResource Locator}, Path=ViewModelName}"
 */
@@ -17,11 +17,9 @@ using PsiTransportDataExport.Model;
 namespace PsiTransportDataExport.ViewModel
 {
     /// <summary>
-    /// This class contains static references to all the view models in the
-    /// application and provides an entry point for the bindings.
-    /// <para>
-    /// See http://www.mvvmlight.net
-    /// </para>
+    /// This class contains static references to all the view models in the application and provides
+    /// an entry point for the bindings.
+    /// <para>See http://www.mvvmlight.net</para>
     /// </summary>
     public class ViewModelLocator
     {
