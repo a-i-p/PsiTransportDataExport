@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 using PsiTransportDataExport.Model;
+using System.Collections.ObjectModel;
 
 namespace PsiTransportDataExport.ViewModel
 {
@@ -9,21 +10,17 @@ namespace PsiTransportDataExport.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
-        /// <summary>
-        /// The <see cref="WelcomeTitle"/> property's name.
-        /// </summary>
-        public const string WelcomeTitlePropertyName = "WelcomeTitle";
+        private readonly INsiClassesDataServise _nsiClassesDataService;
 
-        private readonly IDataService _dataService;
-        private string _welcomeTitle = string.Empty;
+        private ObservableCollection<NsiClass> _classList;
 
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
-        public MainViewModel(IDataService dataService)
+        public MainViewModel(INsiClassesDataServise nsiClassesDataService)
         {
-            _dataService = dataService;
-            _dataService.GetData(
+            _nsiClassesDataService = nsiClassesDataService;
+            _nsiClassesDataService.GetClassList(
                 (item, error) =>
                 {
                     if (error != null)
@@ -32,31 +29,24 @@ namespace PsiTransportDataExport.ViewModel
                         return;
                     }
 
-                    WelcomeTitle = item.Title;
+                    ClassList = new ObservableCollection<NsiClass>(item);
                 });
         }
 
         /// <summary>
-        /// Gets the WelcomeTitle property. Changes to that property's value raise the
+        /// Sets and gets the ClassList property. Changes to that property's value raise the
         /// PropertyChanged event.
         /// </summary>
-        public string WelcomeTitle
+        public ObservableCollection<NsiClass> ClassList
         {
             get
             {
-                return _welcomeTitle;
+                return _classList;
             }
             set
             {
-                Set(ref _welcomeTitle, value);
+                Set(nameof(ClassList), ref _classList, value);
             }
         }
-
-        ////public override void Cleanup()
-        ////{
-        ////    // Clean up if needed
-
-        ////    base.Cleanup();
-        ////}
     }
 }
