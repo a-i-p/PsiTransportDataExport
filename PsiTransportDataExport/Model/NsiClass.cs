@@ -2,7 +2,7 @@
 
 namespace PsiTransportDataExport.Model
 {
-    internal class NsiClass : ObservableObject
+    public class NsiClass : ObservableObject
     {
         private string _name;
         private string _shortName;
