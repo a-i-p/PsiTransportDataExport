@@ -13,6 +13,7 @@ namespace PsiTransportDataExport.ViewModel
         private readonly INsiClassesDataServiсe _nsiClassesDataService;
 
         private ObservableCollection<NsiClass> _classList;
+        private ObservableCollection<NsiClass> _selectedClassList;
 
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
@@ -31,6 +32,7 @@ namespace PsiTransportDataExport.ViewModel
 
                     ClassList = new ObservableCollection<NsiClass>(item);
                 });
+            _selectedClassList = new ObservableCollection<NsiClass>();
         }
 
         /// <summary>
@@ -46,6 +48,22 @@ namespace PsiTransportDataExport.ViewModel
             set
             {
                 Set(nameof(ClassList), ref _classList, value);
+            }
+        }
+
+        /// <summary>
+        /// Sets and gets the ClassList property. Changes to that property's value raise the
+        /// PropertyChanged event.
+        /// </summary>
+        public ObservableCollection<NsiClass> SelectedClassList
+        {
+            get
+            {
+                return _selectedClassList;
+            }
+            set
+            {
+                Set(nameof(SelectedClassList), ref _selectedClassList, value);
             }
         }
     }
