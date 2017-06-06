@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PsiTransportDataExport.Model
 {
-    public interface INsiClassesDataServise
+    public interface INsiClassesDataServiсe
     {
         void FilterClassList(string filter, Action<IEnumerable<NsiClass>, Exception> callback);
 

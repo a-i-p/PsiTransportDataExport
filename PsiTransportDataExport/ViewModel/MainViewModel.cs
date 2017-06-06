@@ -10,14 +10,14 @@ namespace PsiTransportDataExport.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
-        private readonly INsiClassesDataServise _nsiClassesDataService;
+        private readonly INsiClassesDataServiсe _nsiClassesDataService;
 
         private ObservableCollection<NsiClass> _classList;
 
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
-        public MainViewModel(INsiClassesDataServise nsiClassesDataService)
+        public MainViewModel(INsiClassesDataServiсe nsiClassesDataService)
         {
             _nsiClassesDataService = nsiClassesDataService;
             _nsiClassesDataService.GetClassList(
