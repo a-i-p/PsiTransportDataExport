@@ -3,7 +3,7 @@
     /// <summary>
     /// Сущность типа "Класс НСИ".
     /// </summary>
-    public class NsiClass
+    public class NsiClassDataItem
     {
         public string Id { get; set; }
         public string Name { get; set; }
