@@ -20,13 +20,8 @@
 
     <Grid x:Name="LayoutRoot">
 
-        <TextBlock HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   FontSize="36"
-                   FontWeight="Bold"
-                   Foreground="Purple"
-                   Text="{Binding WelcomeTitle}"
-                   TextWrapping="Wrap" />
+        <ListView DisplayMemberPath="Name"
+                  ItemsSource="{Binding Path=ClassList}" />
 
     </Grid>
 </Window>
