@@ -64,6 +64,7 @@
         <Button Grid.Row="3"
                 Grid.Column="1"
                 Width="30"
+                Command="{Binding Path=UnmarkAllClassCommand}"
                 Content="&lt;&lt;-" />
         <Button Grid.Row="4"
                 Grid.Column="0"

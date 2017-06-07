@@ -1,5 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.CommandWpf;
 using PsiTransportDataExport.Model;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,6 +16,7 @@ namespace PsiTransportDataExport.ViewModel
         private RelayCommand<IEnumerable<object>> _markNsiClassesCommand;
         private ObservableCollection<NsiClass> _sourceClassList;
 
+        private RelayCommand _unmarkAllClassCommand;
         private RelayCommand<IEnumerable<object>> _unmarkClassCommand;
 
         public MainViewModel(INsiClassesDataServiсe nsiClassesDataService)
@@ -86,6 +87,19 @@ namespace PsiTransportDataExport.ViewModel
             set
             {
                 Set(nameof(SourceClassList), ref _sourceClassList, value);
+            }
+        }
+
+        public RelayCommand UnmarkAllClassCommand
+        {
+            get
+            {
+                return _unmarkAllClassCommand
+                    ?? (_unmarkAllClassCommand = new RelayCommand(
+                    () =>
+                    {
+                        MarkedClassList.Clear();
+                    }));
             }
         }
 
