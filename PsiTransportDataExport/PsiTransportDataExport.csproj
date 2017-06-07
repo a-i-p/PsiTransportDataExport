@@ -90,6 +90,8 @@
     <Compile Include="Model\NsiClassesDataServiсe.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\DialogService.cs" />
+    <Compile Include="View\IDialogService.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
