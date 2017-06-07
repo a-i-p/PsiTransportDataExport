@@ -29,7 +29,7 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <ListView Name="sourceClassListView"
@@ -68,9 +68,11 @@
                 Content="&lt;&lt;-" />
         <Button Grid.Row="4"
                 Grid.Column="0"
+                Height="30"
                 Content="Обновить" />
         <Button Grid.Row="4"
                 Grid.Column="2"
+                Height="30"
                 Content="Выгрузить" />
 
     </Grid>
