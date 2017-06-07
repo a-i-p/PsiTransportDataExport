@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PsiTransportDataExport.Model;
+using PsiTransportDataExport.View;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace PsiTransportDataExport.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
+        private readonly IDialogService _dialogService;
         private readonly INsiClassesDataServiсe _nsiClassesDataService;
 
         private RelayCommand _markAllNsiClassesCommand;
@@ -19,15 +21,17 @@ namespace PsiTransportDataExport.ViewModel
         private RelayCommand _unmarkAllClassCommand;
         private RelayCommand<IEnumerable<object>> _unmarkClassCommand;
 
-        public MainViewModel(INsiClassesDataServiсe nsiClassesDataService)
+        public MainViewModel(INsiClassesDataServiсe nsiClassesDataService, IDialogService dialogService)
         {
             _nsiClassesDataService = nsiClassesDataService;
+            _dialogService = dialogService;
+
             _nsiClassesDataService.GetClassList(
                 (item, error) =>
                 {
                     if (error != null)
                     {
-                        // DOTO: Report error here
+                        _dialogService.ShowError(error.Message, "Загрузка списка классов НСИ");
                         return;
                     }
 

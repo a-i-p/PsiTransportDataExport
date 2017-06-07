@@ -13,6 +13,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 using PsiTransportDataExport.Model;
+using PsiTransportDataExport.View;
 
 namespace PsiTransportDataExport.ViewModel
 {
@@ -26,6 +27,8 @@ namespace PsiTransportDataExport.ViewModel
         static ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+
+            SimpleIoc.Default.Register<IDialogService, DialogService>();
 
             if (ViewModelBase.IsInDesignModeStatic)
             {
