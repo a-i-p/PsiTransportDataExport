@@ -6,10 +6,6 @@ using System.Collections.ObjectModel;
 
 namespace PsiTransportDataExport.ViewModel
 {
-    /// <summary>
-    /// This class contains properties that the main View can data bind to.
-    /// <para>See http://www.mvvmlight.net</para>
-    /// </summary>
     public class MainViewModel : ViewModelBase
     {
         private readonly INsiClassesDataServiсe _nsiClassesDataService;
@@ -18,9 +14,6 @@ namespace PsiTransportDataExport.ViewModel
         private RelayCommand<IEnumerable<object>> _markNsiClassesCommand;
         private ObservableCollection<NsiClass> _sourceClassList;
 
-        /// <summary>
-        /// Initializes a new instance of the MainViewModel class.
-        /// </summary>
         public MainViewModel(INsiClassesDataServiсe nsiClassesDataService)
         {
             _nsiClassesDataService = nsiClassesDataService;
@@ -29,7 +22,7 @@ namespace PsiTransportDataExport.ViewModel
                 {
                     if (error != null)
                     {
-                        // Report error here
+                        // DOTO: Report error here
                         return;
                     }
 
@@ -38,10 +31,6 @@ namespace PsiTransportDataExport.ViewModel
             _markedClassList = new ObservableCollection<NsiClass>();
         }
 
-        /// <summary>
-        /// Sets and gets the ClassList property. Changes to that property's value raise the
-        /// PropertyChanged event.
-        /// </summary>
         public ObservableCollection<NsiClass> MarkedClassList
         {
             get
@@ -54,9 +43,6 @@ namespace PsiTransportDataExport.ViewModel
             }
         }
 
-        /// <summary>
-        /// Gets the MarkNsiClassesCommand.
-        /// </summary>
         public RelayCommand<IEnumerable<object>> MarkNsiClassesCommand
         {
             get
@@ -69,10 +55,6 @@ namespace PsiTransportDataExport.ViewModel
             }
         }
 
-        /// <summary>
-        /// Sets and gets the ClassList property. Changes to that property's value raise the
-        /// PropertyChanged event.
-        /// </summary>
         public ObservableCollection<NsiClass> SourceClassList
         {
             get
