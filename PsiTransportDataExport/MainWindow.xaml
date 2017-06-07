@@ -32,22 +32,22 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <ListView Name="classListView"
+        <ListView Name="sourceClassListView"
                   Grid.Row="0"
                   Grid.RowSpan="4"
                   Grid.Column="0"
                   DisplayMemberPath="ShortName"
-                  ItemsSource="{Binding Path=ClassList}" />
+                  ItemsSource="{Binding Path=SourceClassList}" />
         <Button Grid.Row="0"
                 Grid.Column="1"
                 Width="30"
                 Content="-&gt;&gt;" />
-        <ListView Name="selectedClassListView"
+        <ListView Name="markedClassListView"
                   Grid.Row="0"
                   Grid.RowSpan="4"
                   Grid.Column="2"
                   DisplayMemberPath="ShortName"
-                  ItemsSource="{Binding Path=SelectedClassList}" />
+                  ItemsSource="{Binding Path=MarkedClassList}" />
         <Button Grid.Row="1"
                 Grid.Column="1"
                 Width="30"

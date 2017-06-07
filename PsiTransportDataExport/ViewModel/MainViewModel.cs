@@ -12,8 +12,8 @@ namespace PsiTransportDataExport.ViewModel
     {
         private readonly INsiClassesDataServiсe _nsiClassesDataService;
 
-        private ObservableCollection<NsiClass> _classList;
-        private ObservableCollection<NsiClass> _selectedClassList;
+        private ObservableCollection<NsiClass> _markedClassList;
+        private ObservableCollection<NsiClass> _sourceClassList;
 
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
@@ -30,24 +30,24 @@ namespace PsiTransportDataExport.ViewModel
                         return;
                     }
 
-                    ClassList = new ObservableCollection<NsiClass>(item);
+                    SourceClassList = new ObservableCollection<NsiClass>(item);
                 });
-            _selectedClassList = new ObservableCollection<NsiClass>();
+            _markedClassList = new ObservableCollection<NsiClass>();
         }
 
         /// <summary>
         /// Sets and gets the ClassList property. Changes to that property's value raise the
         /// PropertyChanged event.
         /// </summary>
-        public ObservableCollection<NsiClass> ClassList
+        public ObservableCollection<NsiClass> MarkedClassList
         {
             get
             {
-                return _classList;
+                return _markedClassList;
             }
             set
             {
-                Set(nameof(ClassList), ref _classList, value);
+                Set(nameof(MarkedClassList), ref _markedClassList, value);
             }
         }
 
@@ -55,15 +55,15 @@ namespace PsiTransportDataExport.ViewModel
         /// Sets and gets the ClassList property. Changes to that property's value raise the
         /// PropertyChanged event.
         /// </summary>
-        public ObservableCollection<NsiClass> SelectedClassList
+        public ObservableCollection<NsiClass> SourceClassList
         {
             get
             {
-                return _selectedClassList;
+                return _sourceClassList;
             }
             set
             {
-                Set(nameof(SelectedClassList), ref _selectedClassList, value);
+                Set(nameof(SourceClassList), ref _sourceClassList, value);
             }
         }
     }
