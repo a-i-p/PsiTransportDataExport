@@ -58,6 +58,8 @@
         <Button Grid.Row="2"
                 Grid.Column="1"
                 Width="30"
+                Command="{Binding Path=UnmarkClassCommand}"
+                CommandParameter="{Binding ElementName=markedClassListView, Path=SelectedItems}"
                 Content="&lt;-" />
         <Button Grid.Row="3"
                 Grid.Column="1"

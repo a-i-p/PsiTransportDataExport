@@ -16,6 +16,8 @@ namespace PsiTransportDataExport.ViewModel
         private RelayCommand<IEnumerable<object>> _markNsiClassesCommand;
         private ObservableCollection<NsiClass> _sourceClassList;
 
+        private RelayCommand<IEnumerable<object>> _unmarkClassCommand;
+
         public MainViewModel(INsiClassesDataServiсe nsiClassesDataService)
         {
             _nsiClassesDataService = nsiClassesDataService;
@@ -84,6 +86,23 @@ namespace PsiTransportDataExport.ViewModel
             set
             {
                 Set(nameof(SourceClassList), ref _sourceClassList, value);
+            }
+        }
+
+        public RelayCommand<IEnumerable<object>> UnmarkClassCommand
+        {
+            get
+            {
+                return _unmarkClassCommand
+                    ?? (_unmarkClassCommand = new RelayCommand<IEnumerable<object>>(
+                    p =>
+                    {
+                        if (p != null)
+                        {
+                            MarkedClassList = new ObservableCollection<NsiClass>(
+                                MarkedClassList.Except(p.Cast<NsiClass>(), new ByIdNsiClassEqualityComparer()));
+                        }
+                    }));
             }
         }
     }
