@@ -41,6 +41,7 @@
         <Button Grid.Row="0"
                 Grid.Column="1"
                 Width="30"
+                Command="{Binding Path=MarkAllNsiClassesCommand}"
                 Content="-&gt;&gt;" />
         <ListView Name="markedClassListView"
                   Grid.Row="0"
